@@ -22,7 +22,7 @@ else
 endif
 
 function! ctrlp#hg_status#init()
-  return map(split(s:system("hg status | grep -P '^\\?|A|M '"), "\n"), 'v:val')
+  return map(split(s:system("hg status | grep -e '^[?|A|M] '"), "\n"), 'v:val')
 endfunc
 
 function! ctrlp#hg_status#accept(mode, str)
